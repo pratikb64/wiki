@@ -6,6 +6,7 @@ tags
 wiki/docs/current
 wiki/public/css
 wiki/public/dist
+wiki/www/.nuxt
 dist/
 css-rtl/
 node_modules/*

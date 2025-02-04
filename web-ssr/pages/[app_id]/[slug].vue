@@ -1,12 +1,14 @@
 <script setup>
 const { data: page } = await useAsyncData("wikiPage", () => {
+  console.log("useNuxtApp().$event.context")
+  console.log(useNuxtApp().$event.context.content)
   return useNuxtApp().$event.context;
 });
 </script>
 
 <template>
-  <div>
-    <h1>{{ page.title }}</h1>
-    <div v-html="$md.render(page.content)" />
+  <div v-if="page">
+    <div v-html="page.content || ''"></div>
   </div>
+  <NuxtRouteAnnouncer />
 </template>
